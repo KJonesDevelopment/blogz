@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            {% if not session.logged_in %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                <a href="/">Mainpage</a>
+            {% else: %}
+                <p>Hello, {{username}}</p>
+                <a href="/logout">Logout</a>
+                <a href="/userdashboard">User Dashboard</a>
+                <a href="/"> Mainpage </a>
+            {% endif %}
+        </header>
+        {%block content%}
+        {% endblock %}
+    </body>
+</html>

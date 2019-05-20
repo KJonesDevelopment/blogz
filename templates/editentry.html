@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/editentry?id={{blog.id}}" method='POST'>
+    <h3> Entry Title: 
+        <input type="title" name="title" value="{{blog.title}}" />  {{titleError}}
+    </h3>
+    <h3> Tag Line: 
+        <input type="tagline" name="tagline" value="{{blog.tagline}}"/>
+    </h3>
+    <textarea type="text" name="body" rows="15" cols="30">{{blog.body|safe}}{{entryError}}{{entry}}</textarea>
+    <input type="submit" value="Update Entry" />
+</form>
+
+{% endblock content %}

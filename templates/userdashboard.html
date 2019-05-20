@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<a href="/addentry"> Add an entry </a>
+
+
+<h1>Edit An Entry</h1>
+{% for entry in entries %}
+    <h3><a href="/editentry?id={{entry.id}}"> {{entry.title}}</a></h3> 
+    <div>{{entry.tagline}}</div>
+    <hr />
+{% endfor %}
+
+{% endblock %}
